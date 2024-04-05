@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seech Converter</title>
+
+    <style>
+        *{
+            margin: o;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+            box-shadow: border-box;
+        }
+        .hero{
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(45deg,#010758,#490d61);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+        }
+        .hero h1{
+            font-size: 45px;
+            font-weight: 500;
+            margin-top: -50px;
+            margin-bottom: 50px;
+        }
+        .hero h1 span{
+            color: #ff2963;
+        }
+        textarea{
+            width: 600px;
+            height: 250px;
+            background: #403d84;
+            color: #fff;
+            font-size: 15px;
+            border: 0;
+            outline:0;
+            padding: 20px;
+            border-radius: 10px;
+            resize: none;
+            margin-bottom: 30px;
+
+        }
+        textarea::placeholder{
+            font-size: 16px;
+            color: #ddd;
+        }
+        .row{
+            width: 600px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        button{
+            background: #d70a37;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 30px;
+            border-radius: 35px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            display: flex;
+           align-items: center;
+        }
+        button img{
+            width: 16px;
+            margin-right: 10px;
+           
+        }
+        select{
+            flex: 1;
+            color: #fff;
+            background: #403d84;
+            height: 50px;
+            padding: 0 20px;
+            outline: 0;
+            border: 0;
+            border-radius: 35px;
+            appearance: none;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAdVBMVEX///8AAAAaGhrZ2dkYGBgjIyMcHBzj4+Ph4eEfHx/n5+cJCQkFBQUqKirb29snJyf5+fnS0tKtra0TExPExMS0tLTNzc2dnZ1QUFBvb2/u7u5oaGi+vr4wMDC6urpgYGCRkZFISEh1dXWbm5tAQEA0NDR9fX2H6nkKAAADNElEQVR4nO3caVPiQBSF4Vz2YTPAyCI6KIz8/584QDlCQZLuTi/3xDrv19ta/VQIi5hkGWOMMcYYY4wxxhhjjDHGGGOMMcbYTyhfzler+Ux7GxYt3ze73fb9d9EsX32M5NJoPU+9Maf6+458tdgM7qeHltzUxaXkx9HtTsf7/HY6/Ct3rV+0dlrd4PN+p5PpdTrr3U9Fnh4OGkLTgp0uvs/q6eJxKtKbVv1GnYocV8nLU9EUUVLsOO10eBlvi6d4kjKHyMd5PCuboknKHSLnZ9l1+RhKUuWQyekMGVfMgSSVDpHXbFU5lxaIxOCQbfmp/l/S1jacMzlOj62H13REidEh46xrWgIgMTtEspZ5jbZk+su8R7E4IiIdVcnAxiHmc0RbYucYG5+1tCV2DnnL5lbrpKP0CdjSIRvDK7u2xNYhp4/vO8ulGhJrx9tpcdvykChIrB3yfF6+sV29SCyxd6wv6/M3TIm9o/v1l5KBxTuA9BJ7x/UdertjXp1a4uC4eY3Dk9Rz4EnqOpwkywQOm7eyhQ4siY8DSeLnwJH4OlAk/g4MSQgHgqQfxKEvCeXQloRz6EpCOjQlYR1OksIvulEcLpJRQEl4h44khkNDEseRXhLLkVoSz5FWEtORUtIv+Y+FMI50ktiOVJJhdEcaSQqHk+QV2RFfksoRW5LOEVeS0hFTktYRT5LaEUuS3uEk+YPsiCHRcYSXaDlCS/QcYSWajpASXYeLZFwpGU50HU6SZ2RHGAmCI4QEw+EvQXH4SnAcfhIkh48Ey1FfguZwktxcBojnqCdBdNSRYDrcJagOVwmuw02C7HCSRP0eJ6UE2xFeonflUFiJ5hVQISW6V3KFk2hfkRZKou0IJdF3hJEgOEJIMBz+EhSHrwTH4SdBcvhIsBz1JWiOuhI8Rz0JoqOOBNPhLkF1uEpwHW4SZIeLBNthL0F32ErwHXaSJjhsJM1wmCVNcZgkzXFUS5rkqJI0y1EuaZqjTNI8x0lScOeuXgMdWTZ4uN/KZ197T/W6u6Pt6Jibfwa04f778dU7DrV349fysN/t9ocEt+5gjDHGGGOMMcYYY4wxxhhjjDHGGGtq/wBo3Tl2FuMaFAAAAABJRU5ErkJggg==);
+            background-repeat: no-repeat;
+            background-size: 15px;
+            background-position-x:calc(100% - 20px) ;
+            background-position-y: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="hero">
+    <h1>Text To Speech <span>Converter</span></h1>
+    <textarea placeholder="Write anything hear..."></textarea>
+    <div class="row">
+      <select ></select>
+      <button <img src="data:image/png;base64,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" alt="">>Listen</button>
+
+    </div>
+
+</div>
+
+
+
+    <script>
+        let speech = new SpeechSynthesisUtterance();
+
+        let voices =[];
+        let voiceSelect = document.querySelector("select");
+
+        window.speechSynthesis.onvoiceschanged = ()=> {
+
+            voices = window.speechSynthesis.getVoices();
+            speech.voice = voices[0];
+
+         voices.forEach((voice,i) => (voiceSelect.options[i] = new Option(voice.name,i)));
+
+              voiceSelect.addEventListener("change", () => {
+                speech.voice = voices[voiceSelect.value];
+              })
+
+
+
+        }
+
+        document.querySelector("button").addEventListener("click", () =>{
+            speech.text = document.querySelector("textarea").value;
+            window.speechSynthesis.speak(speech);
+        })
+
+
+
+    </script>
+    
+</body>
+</html>
